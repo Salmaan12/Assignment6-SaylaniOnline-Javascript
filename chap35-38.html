@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*question 1*/
+        function currentDate(){
+            var func= new Date();
+            document.write("<br><br>"+func);
+        }
+        currentDate();
+
+        /*question 2*/
+        function greet(){
+            var first= prompt("Enter First name");
+            var last= prompt("Enter Last name");
+            alert("Hello "+ first+ " "+ last);
+        }
+        greet();
+
+        /*question 3*/
+        var first= +prompt("Enter first number to add");
+        var second= +prompt("Enter second number to add");
+        var result=add(first,second);
+        alert(result);
+        function add(first, second){
+            return first+second;
+        }
+
+        /*question 4*/
+        var num1=7;
+        var num2= 4;
+        var operator= "-";
+        var ans=calc(num1,num2,operator);
+        document.write("<br><br>"+ans);
+
+        function calc(num1,num2,operator){
+            if(operator== "+"){
+                return num1+num2;
+            }
+            else if(operator=="-"){
+                return num1-num2;
+            }
+            else if(operator=="/"){
+                return num1/num2;
+            }
+            else 
+                return "Illegal operator"
+        }
+
+
+        /*question 5*/
+        var sq= 4;
+        var sqRes= square(sq);
+        document.write("<br><br>Square of "+ sq +"is "+ sqRes);
+
+        function square(sq){
+            return sq*sq;
+        }
+
+        /*question 6*/
+        var fact=5;
+        var result= factorial(5);
+        document.write("<br><br>Factorial of "+fact +"is " + result);
+
+        function factorial(fact){
+            var res=1;
+            for(var i=1; i<=fact; i++){
+                res*=i;
+            }
+            return res;
+        }
+
+        /*question 7*/
+        var start= 1;
+        var end = 12;
+        counting(start,end);
+        document.write("<br><br>");
+        function counting(start,end){
+            for(var i=start; i<=end; i++){
+                document.write(i+",");
+            }
+        }
+
+        /*question 8*/
+        var base= +prompt("Enter base value");
+        var perp= +prompt("Enter perpendicular value");
+        calculateHypotenuse(base,perp);
+
+
+        function calculateHypotenuse(base,perp){
+           var b= calculateSquare(base);
+            var p= calculateSquare(perp);
+            var h= b+p;
+            document.write("<br><br>hypotenuse<sup>2</sup>: "+ h);
+        }
+        function calculateSquare(abc){
+            return abc*abc;
+        }
+
+        /*question 9*/
+        area(3,5);
+        var a=3; 
+        var b=5;
+        area(a,b);
+
+        function area(a,b){
+            document.write("<br><br>Area of Rectangle is: "+ a*b)
+        }
+
+
+        /*question 10*/
+        var palin= "madam";
+        checkPalindrome(palin);
+        function checkPalindrome(palin){
+            var length= palin.length-1;
+            var check=false;
+            for(var i=0 ; i< palin.length/2 ; i++){
+                if(palin.charAt(i)== palin.charAt(length--)){
+                    check=true;
+                }
+                else 
+                    check=false;
+                    break;
+
+            }
+            if(check){
+                document.write("<br><br>It is a palindrome");
+            }
+            else 
+                document.write("<br><br>Not a palindrome");
+                   
+        }
+
+
+        /*question 11*/
+        var example= "the quick brown fox";
+        upperCase(example);
+
+        function upperCase(example){
+            var newString=example.charAt(0).toUpperCase();;
+            
+            for(var i=1; i< example.length; i++){
+                if(example.charAt(i)==" "){
+                    newString += " ";
+                    newString += example.charAt(i+1).toUpperCase();
+                    i++;
+                }
+                else
+                    newString += example.charAt(i);
+            }
+            document.write("<br><br>"+ newString);
+        }
+
+
+        /*question 12*/
+        var line="Web Development Tutorial";
+        longestWord(line);
+
+        function longestWord(line){
+            var lengthPre=0;
+            var lengthNew=0;
+            var word="";
+            var newWord="";
+            for(var i=0;i< line.length;i++){
+                
+                if(line.charAt(i)==" "){
+                    
+                    if(lengthPre< lengthNew)
+                    lengthPre=lengthNew;
+                    lengthNew=0;
+                    newWord=word;
+                    word="";
+                }
+                else if(i==--line.length){
+                    word+= line.charAt(i);
+                    lengthPre=lengthNew;
+                    lengthNew=0;
+                    newWord=word;
+                    word="";
+                
+                }
+                else
+                    word += line.charAt(i);
+                    lengthNew++;
+            }
+
+            document.write("<br><br>Longest word is "+newWord);
+        }
+
+
+
+        /*question 13*/
+        var occurence="JSResourceS.com";
+        count(occurence,'o');
+
+        function count(occurence,letter){
+            var occur=0;
+            for(var i=0;i< occurence.length;i++){
+                if(occurence.charAt(i).toLowerCase()== 'o'){
+                    occur++;
+                }
+            }
+            document.write("<br><br>it occurs "+ occur+ " times")
+        }
+
+
+
+        /*question 14*/
+        var radius= 4;
+        calcCircumference(radius);
+        calcArea(radius);
+
+        function calcCircumference(radius){
+            document.write("<br><br>Circumference is "+ (2*3.142*radius));
+        }
+
+        
+        function calcArea(radius){
+            document.write("<br><br>Area is "+ (3.142*radius*radius));
+        }
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>
+

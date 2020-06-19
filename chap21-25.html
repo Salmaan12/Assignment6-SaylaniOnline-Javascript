@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var firstName= prompt("Enter your first name");
+        var lastName= prompt("Enter your last name");
+        var fullName= firstName +" "+ lastName;
+        alert("Hello! "+ fullName);
+
+        var model= prompt("Enter your fav mobile model")
+        var length= model.length;
+        document.write("My fav phone is: "+ model + ". Length of string is: "+ length);
+
+        var word="Pakistani";
+        var index= word.indexOf("n");
+        document.write("<br><br> String: "+ word + "<br> Index of 'n': "+ index);
+    
+        var word2="Hello World";
+        var index= word2.lastIndexOf("l");
+        document.write("<br><br> String: "+ word2 + "<br> Index of 'l': "+ index);        
+    
+        
+        var word3="Pakistani";
+        var char= word3.charAt(3);
+        document.write("<br><br> String: "+ word3 + "<br> Character at index 3: "+ char);
+    
+    
+        var firstName= prompt("Enter your first name");
+        var lastName= prompt("Enter your last name");
+        var fullName= firstName.concat(" ",lastName);
+        alert("Hello! "+ fullName);
+
+
+        var city = "Hyderabad";
+        var city2= city.replace("Hyder", "Islam");
+        document.write("<br><br> City: "+ city + "<br> After replacement: "+ city2)
+
+        var message = "Ali and Sami are best friends. They play cricket and football together."; 
+        var newMessage= message.replace(/and/g, "&");
+        document.write("<br><br> "+newMessage);
+        
+        
+        var str= "472";
+        document.write("<br><br>Value: "+ str + "<br>Type: "+ typeof(str));
+        var num=parseInt(str);
+        document.write("<br><br>Value: "+ num + "<br>Type: "+ typeof(num));
+
+
+
+        var input= prompt("Enter any word to change in uppercase");
+        var changed= input.toUpperCase();
+        document.write("<br><br>User input: "+ input +"<br>Upper case: "+ changed );
+
+
+        var input= prompt("Enter any word to change in titlecase");
+        var firstWord= input.charAt(0).toUpperCase();
+        var remaining= input.slice(1);
+        var titleCase= firstWord.concat(remaining);
+        document.write("<br><br>User input: "+ input +"<br>Title case: "+ titleCase );
+        
+
+        var num = 35.36;
+        var numInString= num.toString();
+        var removed= numInString.replace(".","");
+        document.write("<br><br>Number: "+ num + "<br>Result: "+ removed);
+        
+
+        var userName= prompt("Enter Username");
+        var flag= false;
+        for(var i=0; i< userName.length ; i++){
+            if(userName.charCodeAt(i)== 33 || userName.charCodeAt(i)== 44 || userName.charCodeAt(i)== 46 || userName.charCodeAt(i)== 64 ){
+                alert("Please enter a valid username");
+                flag= true;
+            }
+        }
+        if(!flag){
+            alert("Entered username is valid")
+        }
+
+
+
+        var A = ["cake", "apple pie", "cookie", "chips", "patties"];
+        var userOrder = prompt("Welcome to ABC bakery! Which item you want to purchase?");
+        var check= false;
+        for(var i=0; i < A.length; i++){
+            if(userOrder.toLowerCase()== A[i])
+            {
+                alert(userOrder + " is available at index "+ i + "in our bakery");
+                check=true;
+                break;
+
+            }
+        }
+        if(!check){
+            alert("Item not found");
+        }
+
+
+
+
+        var password= prompt("Enter your password");
+        var num= false; var alph= false;
+        document.write("<br><br>Entered password: " + password);
+
+        
+        if(password.charCodeAt(0)>= 48 && password.charCodeAt(0)<= 57){
+            document.write("<br>Password cannot begin with a number");
+            document.write("<br>Plz enter a valid password")
+        }
+        else if(password.length < 6){
+            document.write("<br>Password length cannot be less than 6");
+            document.write("<br>Plz enter a valid password");
+       
+        }
+        else {
+            for(var i=1 ; i< password.length; i++){
+                if(password.charCodeAt(i)>= 48 && password.charCodeAt(i)<= 57){
+                    num= true;
+                    break;
+                }
+            }
+            for(var i=1 ; i< password.length; i++){
+                if((password.charCodeAt(i)>= 65 && password.charCodeAt(i)<= 90)||(password.charCodeAt(i)>= 97 && password.charCodeAt(i)<= 122)){
+
+                    alph= true;
+                    break;
+                }
+            }
+            if(num && alph){
+                document.write("<br>Valid Password");
+
+            }
+            else{
+                document.write("<br>Invalid Password");
+            }
+        }
+
+
+
+        document.write("<br><br>");
+        var university= "University of Karachi";
+        var split=university.split(" ");
+        for(var i=0; i< split.length; i++){
+            document.write(split[i]+ "<br>");
+
+        }
+
+
+        var userInput= prompt("Enter any word to display it's last character");
+        var lastChar= userInput.slice(userInput.length-1);
+        document.write("<br><br>user input: "+userInput+ "<br>Lasr character of input: "+ lastChar);
+
+
+        var sentence= "The quick brown fox jumps over the lazy dog";
+        var count = 0;
+        for(var j=0; j< sentence.length ; j++)
+        {
+            if(sentence.slice(j, j+3).toLowerCase() === "the")
+            count++;
+        }
+        document.write("<br><br>Text: "+ sentence + "<br>There are "+ count + " occurrence(s) of word 'the'");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

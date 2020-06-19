@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var input = +prompt("Enter any positive integer");
+        document.write("number:" + input);
+        document.write("<br>round off value: " + Math.round(input));
+        document.write("<br>floor value: " + Math.floor(input));
+        document.write("<br>ceil value: " + Math.ceil(input));
+
+        var input2 = +prompt("Enter any negative integer");
+        document.write("<br><br>number:" + input2);
+        document.write("<br>round off value: " + Math.round(input2));
+        document.write("<br>floor value: " + Math.floor(input2));
+        document.write("<br>ceil value: " + Math.ceil(input2));
+
+        var abs = +prompt("Enter number to find absolute");
+        document.write("<br><br>The absolute value of " + abs + " is " + Math.abs(abs));
+
+        var dice = Math.random();
+        var numbr = (dice * 6) + 1;
+        var round = Math.floor(numbr);
+        document.write("<br><br> Random number" + round);
+
+        var coin= Math.random();
+        var coinNum= (coin*2)+1;
+        var roundCoin= Math.floor(coinNum);
+        if(roundCoin==1)
+        document.write("<br><br> "+ roundCoin+" <br>Random coin value:Heads" );
+        else
+        document.write("<br><br> "+ roundCoin+" <br>Random coin value:Tails" );
+        
+
+        var num = Math.random();
+        var hund = (num * 100) + 1;
+        var round = Math.floor(hund);
+        document.write("<br><br> Random number between 1 and 100:" + round);
+
+        var weight= prompt("Enter your weight");
+        var convert= parseFloat(weight);
+        document.write("<br>Your Weight is "+convert+ " kilograms");
+    
+
+        var secret = Math.random();
+        var numbr = (secret * 10) + 1;
+        var round = Math.floor(numbr);
+        var userInput= +prompt("Enter number");
+        if(round== userInput){
+            document.write("<br><br>Congratulations! you enter correct number");
+
+        }
+        else{
+            document.write("<br><br>Please try again");
+        }
+
+        
+    </script>
+</body>
+
+</html>

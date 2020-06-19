@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*question 1*/
+        var current= new Date();
+        document.write(current);
+
+        /*question 2*/
+        var months=["jan","feb","mar","apr","may","june","july","aug","sep","oct","nov","dec"];
+        var currentMonth= current.getMonth();
+        document.write("<br><br>Current Month: "+ months[currentMonth]);
+        
+        
+        /*question 3*/
+        var days=["Sun","Tue","Wed","Thu","Fri","Sat"];
+        var currentDay= current.getDay();
+        document.write("<br><br>Today is "+ days[currentDay]);
+
+
+        /*question 4*/
+        if(currentDay== 0 || currentDay== 6)
+            document.write("<br><br>Today is fun day");
+        else 
+            document.write("<br><br>Today is working day");
+            
+
+        /*question 5*/
+        if(current.getDate() <=15){
+            document.write("<br><br>First fifteen days oif the month");
+        }
+        else {
+            document.write("<br><br>Last days of the month");
+        }
+
+
+        /*question 6*/
+        document.write("<br><br>Current Date: "+ current);
+        document.write("<br>Elapsed milliseconds since January 1, 1970: "+ current.getTime());
+        document.write("<br>Elapsed minutes since January 1, 1970: "+ (current.getTime()/(1000*60*60)));
+
+
+
+        /*question 7*/
+        if(current.getHours < 12){
+            document.write("<br><br>It's AM");
+        }
+        else 
+        document.write("<br><br>It's PM");
+    
+        
+        /*question 8*/
+        var later= new Date(2020, 11, 31);
+        document.write("<br><br>Later date: " + later);
+    
+        /*question 9*/
+        var ramadan= new Date(2015, 5, 18);
+        var totalMill= current.getTime()- ramadan.getTime();
+        document.write("<br><br>"+(totalMill/(1000*60*60*24)));
+
+
+        /*question 10*/
+        var start= new Date(2015,0,1);
+        var refDate= new Date(2015,11,5,22,16,54);
+        document.write("<br><br>On reference date:"+refDate+" "+(refDate.getTime()-start.getTime())+"seconds have passed since beginning of 2015");
+        
+        /*question 11*/
+        var current= new Date();
+        var ahead= new Date();
+        ahead.setHours(current.getHours()-1);
+        document.write("<br><br>current date: "+ current +" 1 hour ago, it was "+ ahead);
+        
+        /*question 12*/        
+        var back= new Date();
+        back.setFullYear(current.getFullYear()-100);
+        alert("current date: "+ current +" 100 years back, it was "+ back);
+         
+        /*question 13*/
+        var age=+prompt("Enter your age");
+        var birth= new Date();
+        birth.setFullYear(birth.getFullYear()-age);
+        document.write("<br><br>Your age is "+ age+"<br>Your birth year is "+ birth.getFullYear());
+
+        /*question 14*/
+        var customer= prompt("Enter customer name");
+        var month=new Date();
+        var units= +prompt("Enter number of units");
+        var charges= +prompt("Enter charges per unit");
+        var surcharge= +prompt("Enter late payment surcharge")
+        
+        document.write("<br><br><h1>K-Electric Bill</h1><br><br>Customer Name: <b>"+ customer+ "Customer</b><br>Month: <b>"+ months[month.getMonth()]+"</b><br>Number of units: <b>"+units+"</b><br>Charges per unit: <b>"+charges+"</b><br><br>");
+        var amount=netAmount(units,charges);
+        var gross= grossAmount(amount,surcharge);
+        document.write("<br><br>Net Amount Payabe (within Due Date): <b>"+ amount +"</b><br>Late payment surcharge: <b>"+surcharge+"</b><br>Gross Amount Payable(after Due Date): <b>"+gross+"</b>");
+        function netAmount(units, charges){
+            var payable=units*charges;
+            return payable;
+            
+        }
+        function grossAmount(netAmount,surcharge){
+            var gross=netAmount*surcharge;
+            return gross;
+        }
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>
+
